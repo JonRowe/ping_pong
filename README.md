@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/JonRowe/ping_pong.png)](https://codeclimate.com/github/JonRowe/ping_pong)
+[![Build Status](https://secure.travis-ci.org/JonRowe/ping_pong.png)](http://travis-ci.org/JonRowe/ping_pong)
+
 # PingPong
 
 Simple gem to respond to ping calls without going down the `rack` stack.
