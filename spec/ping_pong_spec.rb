@@ -26,12 +26,12 @@ describe 'ping_pong' do
     let(:response) { double }
 
     before do
-      app.stub(:call).and_return(response)
+      allow(app).to receive(:call).and_return(response)
       env['PATH_INFO'] = '/'
     end
 
     it 'to the app' do
-      app.should_receive(:call).with env
+      expect(app).to receive(:call).with env
       middleware.call env
     end
 
