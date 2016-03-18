@@ -19,6 +19,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  if RUBY_VERSION.to_f > 1.9
+    spec.add_development_dependency "rake", '~> 11.0'
+  else
+    spec.add_development_dependency "rake", '~> 10.0'
+  end
+  spec.add_development_dependency "rspec", '~> 3.4'
 end
