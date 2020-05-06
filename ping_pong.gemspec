@@ -18,11 +18,18 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  if RUBY_VERSION.to_f > 1.9
-    spec.add_development_dependency "rake", '~> 11.0'
+  if RUBY_VERSION.to_f <= 2.2
+    spec.add_development_dependency "bundler", "~> 1.3"
   else
-    spec.add_development_dependency "rake", '~> 10.0'
+    spec.add_development_dependency "bundler", "~> 2.1"
   end
-  spec.add_development_dependency "rspec", '~> 3.4'
+
+  if RUBY_VERSION.to_f < 2
+    spec.add_development_dependency "rake", '~> 10.0'
+  elsif RUBY_VERSION.to_f < 2.3
+    spec.add_development_dependency "rake", '~> 12.0'
+  else
+    spec.add_development_dependency "rake", '~> 13.0'
+  end
+  spec.add_development_dependency "rspec", '~> 3.9'
 end
